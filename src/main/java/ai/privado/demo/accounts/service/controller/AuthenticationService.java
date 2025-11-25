@@ -88,7 +88,7 @@ public class AuthenticationService {
 			UserE saved = userr.save(us);
 			logger.info("New Signup : - " + email + phone);
 			this.sendEvent(UUID.randomUUID().toString(), "SIGNUP", email + phone);
-			this.sendEmail(email, "Welcome", "Hi " + firstName + " " + lastName + " Some welcome message to begin  ");
+			this.sendEmail(email, "Welcome", "Hi " + firstName + " " + lastName + " Some welcome message to begin    ");
 			this.sendSlackMessage("someid", "New user Signup - " + email + ", Name - " + firstName + " " + lastName);
 			return mapper.map(saved, UserProfileD.class);
 		}
